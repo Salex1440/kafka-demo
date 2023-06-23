@@ -11,15 +11,11 @@ import org.apache.kafka.common.serialization.Serializer;
 @Setter
 @AllArgsConstructor
 @ToString
-public class Foo implements Serializer {
+public class Foo {
 
     private String bar;
 
     public Foo() {
     }
 
-    @Override
-    public byte[] serialize(String s, Object o) {
-        return new byte[0];
-    }
 }

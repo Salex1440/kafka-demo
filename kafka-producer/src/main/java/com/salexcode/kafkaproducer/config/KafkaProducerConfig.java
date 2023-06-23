@@ -1,6 +1,7 @@
 package com.salexcode.kafkaproducer.config;
 
 import com.salexcode.kafkaproducer.entity.Foo;
+import com.salexcode.kafkaproducer.entity.FooSerializer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +24,7 @@ public class KafkaProducerConfig {
         Map<String , Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, boostrapServers);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, Foo.class);
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, FooSerializer.class);
         return props;
     }
 

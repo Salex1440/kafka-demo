@@ -1,6 +1,7 @@
 package com.salexcode.kafkaconsumer.config;
 
 import com.salexcode.kafkaconsumer.entity.Foo;
+import com.salexcode.kafkaconsumer.entity.FooSerializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,7 +26,7 @@ public class KafkaConsumerConfig {
         Map<String , Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, boostrapServers);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, Foo.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, FooSerializer.class);
         return props;
     }
 
