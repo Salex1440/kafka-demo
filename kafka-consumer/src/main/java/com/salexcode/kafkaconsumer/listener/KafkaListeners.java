@@ -9,7 +9,7 @@ public class KafkaListeners {
 
     @KafkaListener(
             topics = "fooTopic",
-            groupId = ""
+            groupId = "fooGroup"
     )
     void listener(Foo data) {
         System.out.println(data);
